@@ -38,15 +38,10 @@ npx tsc --init
 -	`"module": ` edite para `"module": "Node16"`
 
 -	Descomente as linhas abaixo:
-
   - `"lib": ` edite para: `"lib": ["es2023"]`
-
   - `"moduleResolution"` edite para: `"moduleResolution": "node16"`
-
   - `"sourceMap": true`
-
   - `"outDir": "./"` edite para: `"outDir": "./dist"`
-  
   - `"rootDir": "./"` edite para: `"rootDir": "./src"`
 
 - Crie o subdiretório `src` dentro do projeto
@@ -111,7 +106,7 @@ npm run build
 }
 ```
 
-13. Crie um novo arquivo `.gitignore` na raiz do diretório do projeto (junto aos arquivos de configuração `*.json` com o seguinte conteúdo. Esse arquivo irá indicar o conteúdo que não deve ser enviado para o repositório Git.
+13. Crie um novo arquivo `.gitignore` na raiz do diretório do projeto (junto aos arquivos de configuração `*.json` com o seguinte conteúdo. Esse arquivo irá indicar o conteúdo que não deve ser enviado para o repositório Git.)
 ```
 node_modules
 dist
