@@ -22,38 +22,44 @@ npm install typescript --save-dev
 
 5. Observe as alterações efetuadas no arquivo `package.json` e a criação do subdiretório `node_modules` com os pacotes do TypeScript.
 
-6. Verifique se o compilador do TypeScript está executando através do comando:
+6. Verifique se o compilador do `TypeScript` está executando através do comando:
 ```
 npx tsc -v
 ```
 
-7. Acrescente um arquivo `tsconfig.json` com as opções de compilação do TypeSript através do comando:
+7. Acrescente um arquivo `tsconfig.json` com as opções de compilação do `TypeSript` através do comando:
 ```
 npx tsc --init
 ```
 
 8. Abra o arquivo `tsconfig.json` e observe todas as opções disponíveis. Realize as seguintes alterações:
--	Troque a opção "target" para "es2022";
--	Troque a opção "module" para "Node16";
--	Descomente as linhas:
-  - "lib"
-    - edite para: "lib": ["es2023"];
-  - "moduleResolution"
-    - edite para: "moduleResolution": "node16";
-  - "sourceMap": true;
-  - "outDir": "./"
-    - edite para: "outDir": "./dist";
-  - "rootDir": "./"
-    - edite para: "rootDir": "./src";
-- Crie o subdiretório `src` dentro do projeto;
--	Acrescente novas propriedades após a `}` que fecha a propriedade "compilerOptions":
+-	`"target": ` edite para `"target": "es2022"`
+
+-	`"module": ` edite para `"module": "Node16"`
+
+-	Descomente as linhas abaixo:
+
+  - `"lib": ` edite para: `"lib": ["es2023"]`
+
+  - `"moduleResolution"` edite para: `"moduleResolution": "node16"`
+
+  - `"sourceMap": true`
+
+  - `"outDir": "./"` edite para: `"outDir": "./dist"`
+  
+  - `"rootDir": "./"` edite para: `"rootDir": "./src"`
+
+- Crie o subdiretório `src` dentro do projeto
+
+-	Acrescente novas propriedades após a `}` que fecha a propriedade `"compilerOptions"`:
 ```
 "include": ["src/**/*"],
 "exclude": ["**/*.spec.ts", "**/*.test.ts"]
 ```
-Observação: alternativamente, utilize um arquivo de configuração base já padronizado para diversos ambientes de desenvolvimento de acordo com a documentação disponível em https://www.typescriptlang.org/docs/handbook/tsconfig-json.html 
+Observação: alternativamente, utilize um arquivo de configuração base já padronizado para diversos ambientes de desenvolvimento de acordo com a documentação disponível em:
+- https://www.typescriptlang.org/docs/handbook/tsconfig-json.html 
 
-9. Instale o ambiente de execução TypeScript para Node ts-node (https://typestrong.org/ts-node/) via o comando:
+9. Instale o ambiente de execução `TypeScript` para `Node ts-node` (https://typestrong.org/ts-node/) via o comando:
 ```
 npm install ts-node -D
 ```
@@ -62,7 +68,7 @@ ou
 npm install ts-node --save-dev
 ```
 
-10. Adicione o arquivo de definição de tipos TypeScript (arquivos `*.d.ts` serão instalados no diretório `node_modules/@types`) para a biblioteca do Node através do seguinte comando:
+10. Adicione o arquivo de definição de tipos `TypeScript` (arquivos `*.d.ts` serão instalados no diretório `node_modules/@types`) para a biblioteca do `Node` através do seguinte comando:
 ```
 npm install @types/node -D
 ```
@@ -71,7 +77,7 @@ ou
 npm install @types/node --save-dev
 ```
 
-11. Instale o nodemon (https://nodemon.io/) para automatizar o processo de compilação a cada alteração de arquivo-fonte via o comando:
+11. Instale o `nodemon` (https://nodemon.io/) para automatizar o processo de compilação a cada alteração de arquivo-fonte via o comando:
 ```
 npm install nodemon -D
 ```
@@ -80,21 +86,21 @@ ou
 npm install nodemon --save-dev
 ```
 
-12. Abra o arquivo `package.json` e localize a seção `scripts`. Iremos alterar essa seção para configurar os comandos de compilação e execução do projeto via NPM. O resultado desejado será dois comandos para executar a aplicação `index` em modo de desenvolvimento e de produção:
+12. Abra o arquivo `package.json` e localize a seção `scripts`. Iremos alterar essa seção para configurar os comandos de compilação e execução do projeto via `NPM`. O resultado desejado será dois comandos para executar a aplicação `index` em modo de desenvolvimento e de produção:
 ```
 npm run dev
 ```
-- para iniciar a aplicação em modo de desenvolvedor com nodemon habilitado. Nesse ambiente, qualquer alteração no código-fonte da aplicação será automaticamente refletido em uma nova execução.
+- Para iniciar a aplicação em modo de desenvolvedor com nodemon habilitado. Nesse ambiente, qualquer alteração no código-fonte da aplicação será automaticamente refletido em uma nova execução.
 
 ```
 npm run start
 ```
-- para executar a aplicação com o código TypeScript do projeto via ts-node.
+- Para executar a aplicação com o código `TypeScript` do projeto via `ts-node`.
 
 ```
 npm run build
 ```
-- para compilar a aplicação em código JavaScript para posterior distribuição e execução via node.
+- Para compilar a aplicação em código `JavaScript` para posterior distribuição e execução via `node`.
 
 ```
 "scripts": {
@@ -129,7 +135,7 @@ npm run start
 npm run dev
 ```
 
-4. Execute qualquer alteração no arquivo `index.ts` e verifique que a mesma automaticamente se torna ativa ao salvar. Utilize `CTRL+C` no terminal para sair do nodemon.
+4. Execute qualquer alteração no arquivo `index.ts` e verifique que a mesma automaticamente se torna ativa ao salvar. Utilize `CTRL+C` no terminal para sair do `nodemon`.
 
 5. Abra um terminal e execute o comando:
 ```
@@ -138,19 +144,17 @@ npm run build
 
 6. Observe o resultado dentro do diretório `dist`, dois novos arquivos devem ter sido criados:
 - `index.js`
-- `index.js.map` que possui o suporte necessário para habilitar a depuração de código via um debugger.
+- `index.js.map` que possui o suporte necessário para habilitar a depuração de código via um `debugger`.
 
 
 ## 3 Depurando o projeto
 1. Clique no canto esquerdo da linha `console.log` no arquivo `index.ts` para habilitar um ponto de parada.
 
 
-2. Na janela do Visual Studio Code clique no ícone de depuração (o ícone do `bug`) e selecione `Run and Debug` para iniciar o processo de configuração do depurador.
+2. Na janela do Visual Studio Code clique no `ícone de depuração` (o ícone do bug) e selecione `Run and Debug` para iniciar o processo de configuração do depurador.
 
 
 3. Como não temos um arquivo de configuração de ambiento no Visual Studio Code, será solicitado que se indique o ambiente de depuração adequado. Selecione `Node.js`.
 
 
 4. Pronto. Agora estamos depurando a aplicação.
-
-
